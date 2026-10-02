@@ -374,4 +374,11 @@ body[data-view="extras"] #extras,body[data-view="705ht"] #ht705{display:block}
 .warr b{display:block;font-size:var(--step-1);margin-bottom:.4rem;color:var(--lagoon)}
 .warr p{color:var(--mist)}
 .ex-wn{grid-column:1/-1;color:var(--mist);font-size:var(--step--1)}
+.home-link{display:none;align-items:center;gap:.35rem;text-decoration:none;color:var(--lagoon);font-weight:700;font-size:var(--step--1);padding:.45em .8em;border:1.5px solid var(--lagoon);border-radius:999px;margin-left:.6rem}
+body:not([data-view="home"]) .home-link{display:inline-flex}
+.dock .d-home{display:none}
+body:not([data-view="home"]) .dock .d-home{display:inline-flex;border-color:var(--lagoon);color:var(--lagoon)}
+body:not([data-view="home"]) .dock .d-line{display:none}
+.page-back{margin-top:clamp(32px,5vw,56px)}
+@media (max-width:420px){.top .brand img{height:30px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
