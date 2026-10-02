@@ -381,4 +381,10 @@ body:not([data-view="home"]) .dock .d-home{display:inline-flex;border-color:var(
 body:not([data-view="home"]) .dock .d-line{display:none}
 .page-back{margin-top:clamp(32px,5vw,56px)}
 @media (max-width:420px){.top .brand img{height:30px}}
+.hours{grid-column:1;display:grid;grid-template-columns:auto auto;justify-content:start;gap:.15rem 1.4rem;font-variant-numeric:tabular-nums;margin-top:.2rem}
+.hours span{color:var(--mist)}.hours .today{color:var(--hull);font-weight:700}
+.open-pill{font-size:.75rem;font-weight:700;padding:.35em .8em;border-radius:999px;white-space:nowrap}
+.open-pill.on{background:color-mix(in srgb,var(--lagoon) 18%,transparent);color:var(--lagoon)}
+.open-pill.off{background:color-mix(in srgb,var(--signal) 16%,transparent);color:var(--signal)}
+.contact-list .hours-li{align-items:start}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
