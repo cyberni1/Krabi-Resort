@@ -313,8 +313,32 @@ footer a:hover{color:var(--hull)}
 .faq-a ul{margin:.2rem 0 0;padding-left:1.1rem;display:grid;gap:.45rem}
 .faq-a b{color:var(--hull)}
 /* Extras view */
-body[data-view="extras"] main>section:not(#extras){display:none}
-body:not([data-view="extras"]) #extras{display:none}
+body:not([data-view="home"]) main>section:not(.page){display:none}
+main>section.page{display:none}
+body[data-view="extras"] #extras,body[data-view="705ht"] #ht705{display:block}
+/* 705 HT page */
+#ht705{padding-top:0}
+.ht-hero{position:relative;isolation:isolate;overflow:hidden}
+.ht-hero img{width:100%;height:clamp(420px,62vw,780px);object-fit:cover;object-position:50% 60%}
+.ht-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--abyss) 40%,transparent),transparent 30%,transparent 50%,var(--abyss) 100%);pointer-events:none}
+.ht-hero .wrap{position:absolute;left:0;right:0;bottom:clamp(20px,5vw,56px);z-index:1}
+.ht-hero h2{font-size:var(--step-4);font-weight:900;text-transform:uppercase;line-height:.85}
+.ht-hero .sub{font:700 var(--step-2)/1.05 var(--f-display);margin-top:.6rem;max-width:22ch}
+.ht-body{max-width:780px}
+.ht-body .lead{font-size:var(--step-1);color:var(--lagoon);font-weight:600;margin-top:1.4rem;max-width:40ch}
+.ht-body p{color:var(--mist);line-height:1.7;margin-top:1rem}
+.ht-body h3{margin-top:clamp(40px,6vw,64px)}
+.ht-fig{margin:clamp(28px,4vw,44px) 0 0;border-radius:22px;overflow:hidden;max-width:100%}
+.ht-fig img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.ht-uses{list-style:none;padding:0;margin:1.2rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
+.ht-uses li{border:1.5px solid var(--line);border-radius:999px;padding:.45em .95em;font-weight:600;font-size:var(--step--1)}
+.ht-ben{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:.7rem 1.4rem}
+.ht-ben li{display:grid;grid-template-columns:22px 1fr;gap:.6rem;align-items:start}
+.ht-ben li::before{content:"";width:16px;height:9px;border-left:2.5px solid var(--lagoon);border-bottom:2.5px solid var(--lagoon);transform:rotate(-45deg);margin-top:.35em}
+.ht-cta{margin-top:clamp(48px,7vw,80px);padding:clamp(24px,4vw,40px);border-radius:24px;background:var(--deep);border:1px solid var(--line)}
+.ht-cta .slogan{font:800 var(--step-2)/1.1 var(--f-display);color:var(--hull);margin-top:1rem}
+.ht-cta .row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
+.ht-more{margin-top:.2rem}
 .ex-top{display:grid;gap:1rem}
 .ex-back{color:var(--lagoon);text-decoration:none;font-weight:600;font-size:var(--step--1)}
 .ex-back:hover{text-decoration:underline}
