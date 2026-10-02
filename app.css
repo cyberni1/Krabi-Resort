@@ -295,4 +295,21 @@ footer a:hover{color:var(--hull)}
 @media (max-width:640px){.gal-nav{display:none}}
 .outro{padding-block:0 clamp(48px,8vw,96px)}
 .outro-v{width:100%;max-width:100%;aspect-ratio:16/9;display:block;border-radius:24px;object-fit:cover;background:var(--deep)}
+/* FAQ */
+.faq-list{margin-top:2rem;border-top:1px solid var(--line);max-width:860px}
+.faq-list details{border-bottom:1px solid var(--line);interpolate-size:allow-keywords}
+.faq-list summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 28px;gap:1rem;align-items:center;padding:1.2rem 0;font-weight:600;font-size:var(--step-1);line-height:1.3}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:focus-visible{outline:2px solid var(--lagoon);outline-offset:4px;border-radius:6px}
+.faq-list summary:hover{color:var(--lagoon)}
+.faq-list summary i{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);position:relative;transition:transform .3s,border-color .3s}
+.faq-list summary i::before,.faq-list summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.8px;background:currentColor;transform:translate(-50%,-50%)}
+.faq-list summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+.faq-list details[open] summary i{border-color:var(--lagoon);color:var(--lagoon)}
+.faq-list details[open] summary i::after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq-list details::details-content{block-size:0;overflow:hidden;transition:block-size .35s ease,content-visibility .35s allow-discrete}
+.faq-list details[open]::details-content{block-size:auto}
+.faq-a{padding:0 0 1.4rem;color:var(--mist);max-width:68ch}
+.faq-a ul{margin:.2rem 0 0;padding-left:1.1rem;display:grid;gap:.45rem}
+.faq-a b{color:var(--hull)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
