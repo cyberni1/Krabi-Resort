@@ -72,8 +72,8 @@ section{padding-block:clamp(64px,10vw,128px)}
 
 /* Hero */
 .hero{position:relative;padding:0;overflow:hidden;isolation:isolate;min-height:min(92svh,860px);display:grid;align-items:end}
-.hero-img{position:absolute;inset:0;z-index:-2}
-.hero-img video{width:100%;height:115%;object-fit:cover;object-position:55% 50%;display:block}
+.hero-img{position:absolute;left:0;right:0;top:0;height:80%;z-index:-2;overflow:hidden;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+.hero-img video{width:100%;height:100%;object-fit:cover;object-position:55% 50%;display:block}
 /* Flagship band */
 .flag{position:relative;padding:0;isolation:isolate;overflow:hidden;margin-top:clamp(48px,8vw,96px)}
 .flag img{width:100%;height:clamp(460px,62vw,820px);object-fit:cover;object-position:52% 60%}
@@ -104,7 +104,7 @@ button.vfeat:focus-visible{outline:2px solid var(--lagoon);outline-offset:3px}
   @supports (animation-timeline:scroll()){
     .hero-img img{animation:drift linear both;animation-timeline:scroll(root);animation-range:0 100vh}
     .hero-img video{animation:drift linear both;animation-timeline:scroll(root);animation-range:0 100vh}
-    @keyframes drift{to{transform:translateY(-12%) scale(1.05)}}
+    @keyframes drift{to{transform:translateY(-6%)}}
   }
 }
 
