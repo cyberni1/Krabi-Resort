@@ -421,14 +421,25 @@ function renderExtras(){
     location.hash="#quote";
   }));
 }
+const EXP=/\/extras\/?$/;
+function goHome(e){
+  if(e)e.preventDefault();
+  const base=location.pathname.replace(EXP,"/")||"/";
+  history.pushState(null,"",base);
+  document.body.dataset.view="home";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".brand,.ex-back").forEach(a=>a.addEventListener("click",goHome));
 function route(){
-  const ex=location.hash==="#extras"||/\/extras\/?$/.test(location.pathname);
+  if(EXP.test(location.pathname)&&location.hash&&location.hash!=="#extras"){history.replaceState(null,"",location.pathname.replace(EXP,"/")+location.hash);}
+  const ex=location.hash==="#extras"||(EXP.test(location.pathname)&&!location.hash);
   const was=document.body.dataset.view;
   document.body.dataset.view=ex?"extras":"home";
   if(ex){if(was!=="extras")window.scrollTo(0,0);}
   else if(was==="extras"){const id=location.hash.slice(1);requestAnimationFrame(()=>{const el=id&&document.getElementById(id);el?el.scrollIntoView():window.scrollTo(0,0);});}
 }
 addEventListener("hashchange",route);
+addEventListener("popstate",route);
 function setLang(code,manual){
   if(!T[code])code="en";
   LANG=code;
